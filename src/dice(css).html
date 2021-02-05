@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dice of mochalhui</title>
+    <style>
+      #container {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        transform-style: preserve-3d;
+        animation: jump 4s linear infinite ;
+      }
+      @keyframes jump {
+        from {
+          transform: rotateY(360deg) rotateX(720deg) rotateZ(-720deg);
+        }
+        to {
+          transform: rotateY(-360deg) rotateX(-720deg) rotateZ(720deg);
+        }
+      }
+      ul {
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        width: 100px;
+        height: 100px;
+        border: 1px solid burlywood;
+        background-color: antiquewhite;
+        display: grid;
+        grid-template-columns: repeat(3, 33.33%);
+        grid-template-rows: repeat(3, 33.33%);
+        grid-template-areas:
+          "a b c"
+          "d e f"
+          "g h i";
+      }
+      .one {
+        transform: translateZ(0);
+      }
+
+      .two {
+        transform: rotateY(90deg);
+        transform-origin: right;
+      }
+
+      .three {
+        transform: rotateY(-90deg);
+        transform-origin: left;
+      }
+
+      .four {
+        transform: rotateX(-90deg);
+        transform-origin: bottom;
+      }
+      .five {
+        transform: rotateX(90deg);
+        transform-origin: top;
+      }
+      .six {
+        transform: translateZ(100px);
+      }
+
+      li {
+        list-style-type: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: rgb(236, 185, 193);
+      }
+      .item-a {
+        grid-area: a;
+      }
+      .item-b {
+        grid-area: b;
+      }
+      .item-c {
+        grid-area: c;
+      }
+      .item-d {
+        grid-area: d;
+      }
+      .item-e {
+        grid-area: e;
+      }
+      .item-f {
+        grid-area: f;
+      }
+      .item-g {
+        grid-area: g;
+      }
+      .item-h {
+        grid-area: h;
+      }
+      .item-i {
+        grid-area: i;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <ul class="one">
+        <li class="item-e"></li>
+      </ul>
+      <ul class="two">
+        <li class="item-d"></li>
+        <li class="item-f"></li>
+      </ul>
+      <ul class="three">
+        <li class="item-a"></li>
+        <li class="item-e"></li>
+        <li class="item-i"></li>
+      </ul>
+      <ul class="four">
+        <li class="item-a"></li>
+        <li class="item-c"></li>
+        <li class="item-g"></li>
+        <li class="item-i"></li>
+      </ul>
+      <ul class="five">
+        <li class="item-a"></li>
+        <li class="item-c"></li>
+        <li class="item-e"></li>
+        <li class="item-g"></li>
+        <li class="item-i"></li>
+      </ul>
+      <ul class="six">
+        <li class="item-a"></li>
+        <li class="item-c"></li>
+        <li class="item-d"></li>
+        <li class="item-f"></li>
+        <li class="item-g"></li>
+        <li class="item-i"></li>
+      </ul>
+    </div>
+  </body>
+</html>

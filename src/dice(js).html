@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dice by mochalhui</title>
+<style>
+    #container{
+        width: 500px;
+        height:500px;
+        position: absolute;
+        margin:auto;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+    <div id="container" onclick="choose()">
+        <img id="dice_img" src="../img/one.png" />
+    </div>
+
+
+
+    <script>
+        const diceList=["one.png","two.png","three.png","four.png","five.png","six.png"];
+        const container=document.getElementById('container');
+        const dice=document.getElementById('dice_img');
+        var timer;
+        let i=0;
+        function choose(){
+            i++;
+            if(i%2===1){
+                timer=setInterval(jump,10);
+            }else{
+               stop();
+            }
+        }
+        function jump(){
+            dice.src="../img/"+diceList[Math.floor(Math.random()*6)];//这里是7要注意，因为要包括0 1 2 3 4 5 
+        }
+        function stop(){
+            clearInterval(timer);
+            jump();
+        }
+    </script>
+</body>
+</html>
